@@ -3,129 +3,437 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Timothée Kabwe Zumbi – Project & Data</title>
-<meta name="description" content="Portfolio de Timothée Kabwe Zumbi, Project & Data Professional, PMP, Power BI, DAX, Python, industrie minière. / Portfolio of Timothée Kabwe Zumbi, Project & Data Professional, PMP, Power BI, DAX, Python, mining industry.">
+<title>Timothée Kabwe Zumbi – Project &amp; Data</title>
+<meta name="description" content="Timothée Kabwe Zumbi, Project &amp; Data Professional certifié PMP®, Copperbelt (RDC). Tableaux de bord Power BI, SQL et contrôle de projets miniers. / Project &amp; Data Professional, PMP®, DRC Copperbelt. Power BI dashboards, SQL and mining project controls.">
+<meta property="og:title" content="Timothée Kabwe Zumbi – Project &amp; Data Professional">
+<meta property="og:description" content="Contrôle de projets miniers, Power BI, DAX, SQL, Python. Project controls for mining, Power BI, DAX, SQL, Python.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#EDF0EE">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230E6B57'/%3E%3Cpath d='M5 24 L13 15 L18 19 L27 8' fill='none' stroke='%23EDF0EE' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
 <style>
-  :root { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:system-ui,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
-  header, section, footer { max-width:900px; margin:0 auto; padding:2rem 1rem; }
-  nav { display:flex; justify-content:flex-end; padding:1rem; }
-  .lang button { background:var(--card); color:var(--text); border:1px solid var(--muted); padding:.4rem .9rem; cursor:pointer; border-radius:6px; }
-  .lang button.active { background:var(--accent); color:#0f172a; border-color:var(--accent); }
-  h1 { font-size:2.2rem; margin:.2rem 0; }
-  h2 { color:var(--accent); border-bottom:1px solid var(--card); padding-bottom:.4rem; }
-  .muted { color:var(--muted); }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
-  .card { background:var(--card); padding:1.2rem; border-radius:10px; }
-  .card h3 { margin-top:0; }
-  .tags span { display:inline-block; background:var(--card); border:1px solid var(--accent); color:var(--accent); padding:.2rem .7rem; border-radius:999px; margin:.2rem; font-size:.9rem; }
-  a { color:var(--accent); }
-  .photo { width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); }
-  .btn { display:inline-block; background:var(--accent); color:#0f172a; padding:.5rem 1.1rem; border-radius:8px; text-decoration:none; font-weight:600; margin-top:.5rem; }
-  [data-lang] { display:none; }
-  html[lang="fr"] [data-lang="fr"], html[lang="en"] [data-lang="en"] { display:revert; }
+  :root {
+    --paper:   #EDF0EE;
+    --paper-2: #E2E8E4;
+    --ink:     #12302B;
+    --muted:   #4E625C;
+    --line:    #C3CEC8;
+    --malachite: #0E6B57;
+    --cobalt:  #2B46B9;
+    --copper:  #C2571A;
+    --copper-text: #A24510;
+    --font: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--font); font-stretch: 100%; font-size: 1.0625rem; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, p, ul, dl, dd, figure { margin: 0; padding: 0; }
+  ul { list-style: none; }
+  a { color: var(--cobalt); text-underline-offset: .2em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 3px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* language switch: only the active language is rendered */
+  html[lang="fr"] [data-lang="en"], html[lang="en"] [data-lang="fr"] { display: none !important; }
+
+  /* top bar */
+  .bar { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--paper) 92%, transparent);
+         backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 3.5rem; }
+  .bar nav { display: flex; gap: 1.5rem; font-size: .95rem; font-weight: 500; }
+  .bar nav a { color: var(--ink); text-decoration: none; padding: .25rem 0; border-bottom: 2px solid transparent; }
+  .bar nav a:hover { border-bottom-color: var(--malachite); }
+  .lang { display: inline-flex; border: 1px solid var(--ink); border-radius: 6px; overflow: hidden; }
+  .lang button { font: inherit; font-size: .85rem; font-weight: 600; padding: .3rem .75rem; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+  @media (max-width: 640px) { .bar nav { display: none; } .bar .wrap { justify-content: flex-end; } }
+
+  /* hero */
+  .hero { padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem); }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  h1 { font-stretch: 125%; font-weight: 850; font-size: clamp(2.5rem, 6.2vw, 4.75rem); line-height: .98; letter-spacing: -.025em; }
+  .role { margin-top: 1.25rem; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 600; line-height: 1.3; }
+  .pitch { margin-top: 1rem; max-width: 34rem; color: var(--muted); }
+  .actions { margin-top: 1.75rem; display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; align-items: center; }
+  .btn { display: inline-block; background: var(--ink); color: var(--paper); font-weight: 600; text-decoration: none; padding: .7rem 1.2rem; border-radius: 6px; }
+  .btn:hover { background: var(--malachite); text-decoration: none; }
+  .actions a:not(.btn) { font-weight: 600; }
+  @media (max-width: 920px) { .hero .wrap { grid-template-columns: 1fr; } }
+
+  /* chart */
+  .chart-box { position: relative; }
+  #curve { position: relative; width: 100%; touch-action: pan-y; cursor: crosshair; }
+  #curve svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); font-size: .8rem; line-height: 1.45;
+         padding: .5rem .65rem; border-radius: 6px; white-space: nowrap; opacity: 0; transition: opacity .12s; z-index: 2; }
+  .tip b { font-weight: 700; }
+  .tip i { font-style: normal; display: inline-block; width: .6rem; height: .6rem; border-radius: 2px; margin-right: .4rem; }
+  .legend { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; margin-top: .5rem; font-size: .85rem; font-weight: 600; }
+  .legend[hidden] { display: none; }
+  .legend i { display: inline-block; width: .7rem; height: .7rem; border-radius: 2px; margin-right: .4rem; }
+  figcaption { margin-top: .9rem; font-size: .9rem; color: var(--muted); max-width: 40rem; }
+  .gridline { stroke: var(--line); stroke-width: 1; }
+  .axis-text { fill: var(--muted); font-size: 11.5px; font-family: var(--font); }
+  .end-label { font-size: 12.5px; font-weight: 650; font-family: var(--font); }
+  @media (prefers-reduced-motion: no-preference) {
+    .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.6s cubic-bezier(.45,.05,.25,1) forwards; }
+    .draw.l1 { animation-delay: .1s; } .draw.l2 { animation-delay: .55s; } .draw.l3 { animation-delay: 1s; }
+    .fade { opacity: 0; animation: fade .6s ease 2.3s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes fade { to { opacity: 1; } }
+  }
+
+  /* failsafe: whatever the browser does with the animation, the finished chart is always shown */
+  #curve.settled .draw { animation: none; stroke-dashoffset: 0; }
+  #curve.settled .fade { animation: none; opacity: 1; }
+
+  /* sections */
+  section { padding: clamp(2.5rem, 6vw, 4.5rem) 0; border-top: 1px solid var(--line); }
+  h2 { font-stretch: 112%; font-weight: 800; font-size: clamp(1.6rem, 3.2vw, 2.3rem); line-height: 1.1; letter-spacing: -.015em; margin-bottom: 2rem; }
+  .lead { max-width: 40rem; color: var(--muted); margin: -1rem 0 2rem; }
+
+  /* projects as a ledger */
+  .feature { margin-bottom: 2.5rem; }
+  .feature img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--ink); }
+  .feature figcaption { max-width: none; }
+  .ledger > li { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr) minmax(0, 2.2fr); gap: 1rem 2rem;
+                 padding: 1.5rem 0; border-top: 1px solid var(--line); align-items: baseline; }
+  .ledger > li:last-child { border-bottom: 1px solid var(--line); }
+  .ledger h3 { font-stretch: 108%; font-size: 1.2rem; font-weight: 750; line-height: 1.25; }
+  .stack { margin-top: .3rem; font-size: .9rem; color: var(--muted); }
+  .ledger p { max-width: 38rem; }
+  .ledger .links { display: flex; flex-wrap: wrap; gap: .25rem 1rem; font-weight: 600; justify-content: flex-end; }
+  @media (max-width: 860px) { .ledger > li { grid-template-columns: 1fr; gap: .5rem; } .ledger .links { justify-content: flex-start; } }
+
+  /* about */
+  .about { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: start; }
+  .portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 8px; background: var(--paper-2); }
+  .about p { max-width: 40rem; }
+  .about p + p { margin-top: 1rem; }
+  .skills { margin-top: 2rem; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 2rem; }
+  .skills dt { font-weight: 750; margin-bottom: .35rem; }
+  .skills dd { color: var(--muted); font-size: .98rem; line-height: 1.55; }
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } .portrait { max-width: 200px; } .skills { grid-template-columns: 1fr; } }
+
+  /* timeline: a real sequence, so it keeps a rail */
+  .timeline { position: relative; padding-left: 1.75rem; border-left: 2px solid var(--malachite); }
+  .timeline > li { position: relative; padding: 0 0 2rem 0; display: grid; grid-template-columns: 11.5rem minmax(0, 1fr); gap: .25rem 2rem; }
+  .timeline > li::before { content: ""; position: absolute; left: calc(-1.75rem - 7px); top: .5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--paper); border: 3px solid var(--malachite); }
+  .timeline > li:last-child { padding-bottom: 0; }
+  .when { font-weight: 600; color: var(--malachite); padding-top: .1rem; }
+  .timeline h3 { font-size: 1.1rem; font-weight: 750; line-height: 1.3; }
+  .timeline .org { color: var(--muted); font-size: .95rem; }
+  .timeline p { margin-top: .5rem; max-width: 40rem; }
+  @media (max-width: 700px) { .timeline > li { grid-template-columns: 1fr; } }
+  .creds { margin-top: 3rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; }
+  .creds h3 { font-size: 1.05rem; font-weight: 750; margin-bottom: .6rem; }
+  .creds li { margin-bottom: .35rem; max-width: 30rem; }
+  .creds .meta { color: var(--muted); font-size: .92rem; }
+  @media (max-width: 700px) { .creds { grid-template-columns: 1fr; } }
+
+  /* contact */
+  .contact h2 { margin-bottom: 1.25rem; }
+  .mail { display: inline-block; font-stretch: 112%; font-weight: 800; font-size: clamp(1.4rem, 4.2vw, 2.6rem); letter-spacing: -.01em; color: var(--ink); text-decoration-color: var(--copper); text-decoration-thickness: 3px; word-break: break-word; }
+  .mail:hover { color: var(--malachite); }
+  .contact ul { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: .5rem 2rem; font-weight: 600; }
+  footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
 </style>
 </head>
 <body>
-<nav class="lang">
-  <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
-  <button id="btn-en" onclick="setLang('en')" style="margin-left:.4rem">EN</button>
-</nav>
 
-<header>
-  <img class="photo" src="assets/images/profile.jpg" alt="Timothée Kabwe Zumbi">
-  <p class="muted" data-lang="fr">Bonjour, je suis</p>
-  <p class="muted" data-lang="en">Hello, I'm</p>
-  <h1>Timothée Kabwe Zumbi</h1>
-  <h3 data-lang="fr">Project &amp; Data Professional | PMP® | Power BI · DAX · Python · SQL</h3>
-  <h3 data-lang="en">Project &amp; Data Professional | PMP® | Power BI · DAX · Python · SQL</h3>
-  <p data-lang="fr">Je pilote des projets miniers et je transforme leurs données en décisions claires : coûts, délais, KPI fiables et tableaux de bord.</p>
-  <p data-lang="en">I deliver mining projects and turn their data into clear decisions: cost, schedule, reliable KPIs and dashboards.</p>
-  <p class="muted">Kolwezi, Lualaba, DRC</p>
-  <p>
-    <a href="mailto:timothekabwe@gmail.com">timothekabwe@gmail.com</a> ·
-    <a href="https://github.com/harold92342">GitHub</a> ·
-    <a href="https://www.linkedin.com/in/timkabwe/">LinkedIn</a>
-  </p>
-  <a class="btn" href="assets/files/Timothee_Kabwe_CV.pdf" data-lang="fr">Télécharger mon CV (PDF)</a>
-  <a class="btn" href="assets/files/Timothee_Kabwe_CV.pdf" data-lang="en">Download my CV (PDF)</a>
+<header class="bar">
+  <div class="wrap">
+    <nav aria-label="Navigation">
+      <a href="#projets"><span data-lang="fr">Projets</span><span data-lang="en">Projects</span></a>
+      <a href="#profil"><span data-lang="fr">Profil</span><span data-lang="en">About</span></a>
+      <a href="#parcours"><span data-lang="fr">Parcours</span><span data-lang="en">Experience</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" id="btn-fr" aria-pressed="true" onclick="setLang('fr')">FR</button>
+      <button type="button" id="btn-en" aria-pressed="false" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
 </header>
 
-<section>
-  <h2 data-lang="fr">À propos</h2><h2 data-lang="en">About</h2>
-  <p data-lang="fr">Professionnel certifié PMP® avec plus de 5 ans dans les mines du Copperbelt (Kamoa Copper SA, groupe Ivanhoe Mines). Je coordonne des projets d'infrastructure, suis les coûts, les délais et les achats, puis je modélise les données (modèle en étoile, DAX, Power Query) pour les présenter à la direction dans des tableaux de bord Power BI et Excel. Instructeur PMI agréé (PMP® et CAPM®). MBA Data Science Management en cours, PL-300 en préparation.</p>
-  <p data-lang="en">PMP®-certified professional with 5+ years in the Copperbelt mining industry (Kamoa Copper SA, Ivanhoe Mines group). I coordinate infrastructure projects, track cost, schedule and procurement, then model the data (star schema, DAX, Power Query) to present it to management in Power BI and Excel dashboards. PMI Authorized Training Partner Instructor (PMP® &amp; CAPM®). MBA in Data Science Management in progress, PL-300 in preparation.</p>
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Timothée Kabwe Zumbi</h1>
+      <p class="role">
+        <span data-lang="fr">Project &amp; Data Professional, certifié PMP®</span>
+        <span data-lang="en">Project &amp; Data Professional, PMP® certified</span>
+      </p>
+      <p class="pitch" data-lang="fr">Cinq ans dans les mines du Copperbelt. Je pilote des projets, puis je transforme leurs données en tableaux de bord Power BI et en analyses SQL que la direction peut vérifier.</p>
+      <p class="pitch" data-lang="en">Five years in the Copperbelt mining industry. I deliver projects, then turn their data into Power BI dashboards and SQL analyses that management can verify.</p>
+      <div class="actions">
+        <a class="btn" href="assets/files/Timothee_Kabwe_CV.pdf"><span data-lang="fr">Télécharger le CV (PDF)</span><span data-lang="en">Download the CV (PDF)</span></a>
+        <a href="#projets"><span data-lang="fr">Voir les projets</span><span data-lang="en">See the projects</span></a>
+      </div>
+    </div>
+
+    <figure class="chart-box">
+      <div id="curve" tabindex="0" role="img"></div>
+      <ul class="legend" id="legend" aria-hidden="true" hidden></ul>
+      <div class="tip" id="tip" aria-hidden="true"></div>
+      <figcaption data-lang="fr">Portefeuille fictif de 32 projets miniers, calculé en SQL. Au 30 septembre 2026, 394 M$ de valeur acquise pour 491 M$ dépensés (CPI 0,80). Survolez la courbe ou utilisez les flèches du clavier pour lire chaque mois.</figcaption>
+      <figcaption data-lang="en">Fictional portfolio of 32 mining projects, calculated in SQL. At 30 September 2026, $394M earned for $491M spent (CPI 0.80). Hover over the curve or use the arrow keys to read each month.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section id="projets">
+  <div class="wrap">
+    <h2><span data-lang="fr">Projets</span><span data-lang="en">Projects</span></h2>
+
+    <figure class="feature">
+      <img src="assets/images/dashboard-pulse.jpg" width="1280" height="720" alt="Page Pulse du tableau de bord Power BI : CPI 0,80, SPI 0,87, dépassement prévisionnel 24,7 %, TRIFR 15,8, 15 mitigations en retard. / Pulse page of the Power BI dashboard: CPI 0.80, SPI 0.87, forecast overrun 24.7%, TRIFR 15.8, 15 overdue mitigations." loading="lazy">
+      <figcaption data-lang="fr">Page Pulse du tableau de bord minier : l'état du portefeuille en cinq indicateurs, puis les causes, puis la décision.</figcaption>
+      <figcaption data-lang="en">Pulse page of the mining dashboard: portfolio health in five indicators, then the causes, then the decision.</figcaption>
+    </figure>
+
+    <ul class="ledger">
+      <li>
+        <div><h3>Mining PMO Portfolio Dashboard</h3><p class="stack">Power BI, DAX, Power Query, Python</p></div>
+        <p data-lang="fr">Un tableau de bord pour décider, projet par projet, quoi accélérer, redresser ou arrêter. 32 projets, 6 pages, 17 relations dans un modèle en étoile. Chaque KPI est vérifié par un calcul Python indépendant.</p>
+        <p data-lang="en">A dashboard to decide, project by project, what to accelerate, recover or stop. 32 projects, 6 pages, 17 relationships in a star schema. Every KPI is checked by an independent Python calculation.</p>
+        <div class="links"><a href="https://github.com/harold92342/mining-pmo-dashboard"><span data-lang="fr">Code sur GitHub</span><span data-lang="en">Code on GitHub</span></a></div>
+      </li>
+      <li>
+        <div><h3>Project Controls in SQL</h3><p class="stack">SQLite, CTE, window functions, Python</p></div>
+        <p data-lang="fr">Les mêmes indicateurs recalculés uniquement en SQL : valeur acquise, dépassement prévisionnel, règle de décision, risques en retard, sécurité, 9 contrôles qualité. 17 chiffres sur 17 concordent avec le tableau de bord.</p>
+        <p data-lang="en">The same indicators recalculated in SQL only: earned value, forecast overrun, decision rule, overdue risks, safety, 9 data-quality checks. 17 out of 17 figures match the dashboard.</p>
+        <div class="links"><a href="https://github.com/harold92342/project-controls-sql"><span data-lang="fr">Code sur GitHub</span><span data-lang="en">Code on GitHub</span></a></div>
+      </li>
+      <li>
+        <div><h3>Copperbelt GeoAI</h3><p class="stack">Python, scikit-learn, Streamlit</p></div>
+        <p data-lang="fr">Une application qui repère les districts miniers atypiques de la RDC avec l'algorithme Isolation Forest, comme premier tri pour l'exploration cuivre-cobalt. Le README explique ses limites.</p>
+        <p data-lang="en">An app that flags outlying DRC mining districts with the Isolation Forest algorithm, as a first screening step for copper-cobalt exploration. The README explains its limits.</p>
+        <div class="links"><a href="https://github.com/harold92342/copperbelt-geoai"><span data-lang="fr">Code sur GitHub</span><span data-lang="en">Code on GitHub</span></a></div>
+      </li>
+      <li>
+        <div><h3>Tax Clarity</h3><p class="stack">React, TypeScript, Vite</p></div>
+        <p data-lang="fr">Un calculateur d'impôt sur le revenu congolais qui compare l'ancien régime (IPR) et le nouveau (IRPP). Les données restent dans le navigateur et ne sont envoyées à aucun serveur.</p>
+        <p data-lang="en">A Congolese income tax calculator that compares the old regime (IPR) with the new one (IRPP). Data stays in the browser and is never sent to a server.</p>
+        <div class="links"><a href="https://tax-clarity-sigma.vercel.app"><span data-lang="fr">Essayer</span><span data-lang="en">Try it</span></a><a href="https://github.com/harold92342/tax-clarity">GitHub</a></div>
+      </li>
+      <li>
+        <div><h3>Excel Sales Analytics</h3><p class="stack">Excel</p></div>
+        <p data-lang="fr">Analyse des ventes de l'entreprise Atliq et tableau de bord Excel.</p>
+        <p data-lang="en">Sales analysis for Atliq and an Excel dashboard.</p>
+        <div class="links"><a href="https://github.com/harold92342/Excel-Sales-Analytics-for-Atliq-company"><span data-lang="fr">Code sur GitHub</span><span data-lang="en">Code on GitHub</span></a></div>
+      </li>
+    </ul>
+  </div>
 </section>
 
-<section>
-  <h2 data-lang="fr">Projets</h2><h2 data-lang="en">Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Mining PMO Portfolio Dashboard</h3>
-      <p class="muted">Power BI · DAX · Power Query · Python</p>
-      <p data-lang="fr">Tableau de bord en 6 pages pour un portefeuille de 32 projets miniers. 11 tables sources consolidées en modèle en étoile (5 dimensions, 7 faits), mesures DAX (PV, EV, AC, EAC, CPI, SPI), nettoyage Power Query du KPI sécurité, KPI rapprochés de calculs Python indépendants.</p>
-      <p data-lang="en">6-page dashboard for a 32-project mining portfolio. 11 source tables consolidated into a star schema (5 dimensions, 7 facts), DAX measures (PV, EV, AC, EAC, CPI, SPI), Power Query cleaning of the safety KPI, KPIs reconciled against independent Python calculations.</p>
-      <a href="https://github.com/harold92342/mining-pmo-dashboard">GitHub →</a>
-    </div>
-    <div class="card">
-      <h3>Project Controls in SQL</h3>
-      <p class="muted">SQLite · SQL (CTE, window functions) · Python</p>
-      <p data-lang="fr">Le contrôle de projets du même portefeuille minier calculé uniquement en SQL : valeur acquise, dépassement prévisionnel, règle de décision, risques en retard, sécurité et 9 contrôles qualité. Un test rapproche 17 chiffres du dashboard Power BI : 17 sur 17 concordent.</p>
-      <p data-lang="en">Project controls for the same mining portfolio calculated in SQL only: earned value, forecast overrun, decision rule, overdue risks, safety and 9 data-quality checks. A test reconciles 17 figures with the Power BI dashboard: 17 out of 17 match.</p>
-      <a href="https://github.com/harold92342/project-controls-sql">GitHub →</a>
-    </div>
-    <div class="card">
-      <h3>Copperbelt GeoAI</h3>
-      <p class="muted">Python · Isolation Forest · Streamlit</p>
-      <p data-lang="fr">Détection d'anomalies sur des données minières avec Isolation Forest, publiée sous forme de tableau de bord interactif Streamlit.</p>
-      <p data-lang="en">Anomaly detection on mining data with Isolation Forest, published as an interactive Streamlit dashboard.</p>
-      <a href="https://github.com/harold92342/copperbelt-geoai">GitHub →</a>
-    </div>
-    <div class="card">
-      <h3>Excel Sales Analytics – Atliq</h3>
-      <p class="muted">Excel</p>
-      <p data-lang="fr">Analyse des ventes et tableau de bord Excel.</p>
-      <p data-lang="en">Sales analysis and Excel dashboard.</p>
-      <a href="https://github.com/harold92342/Excel-Sales-Analytics-for-Atliq-company">GitHub →</a>
+<section id="profil">
+  <div class="wrap">
+    <h2><span data-lang="fr">Profil</span><span data-lang="en">About</span></h2>
+    <div class="about">
+      <img class="portrait" src="assets/images/profile.jpg" alt="Portrait de Timothée Kabwe Zumbi / Portrait of Timothée Kabwe Zumbi" width="220" height="275" loading="lazy">
+      <div>
+        <p data-lang="fr">Chez Kamoa Copper SA (groupe Ivanhoe Mines), je coordonne des projets d'infrastructure : je consolide les dossiers, je vérifie les devis, je suis les achats et je signale les retards. Je rends compte à la direction avec Power BI et Excel, et j'automatise les suivis avec Power Automate et SharePoint.</p>
+        <p data-lang="en">At Kamoa Copper SA (Ivanhoe Mines group), I coordinate infrastructure projects: I consolidate files, check quotations, follow procurement and flag delays. I report to management with Power BI and Excel, and automate follow-ups with Power Automate and SharePoint.</p>
+        <p data-lang="fr">Je suis aussi instructeur PMI agréé (PMP® et CAPM®) et j'étudie un MBA en Data Science Management.</p>
+        <p data-lang="en">I am also a PMI Authorized Training Partner Instructor (PMP® and CAPM®) and I am studying for an MBA in Data Science Management.</p>
+        <dl class="skills">
+          <div><dt><span data-lang="fr">Projet</span><span data-lang="en">Project</span></dt><dd><span data-lang="fr">Contrôle de projets, valeur acquise (CPI, SPI, EAC), gouvernance PMO, MS Project, Primavera P6</span><span data-lang="en">Project controls, earned value (CPI, SPI, EAC), PMO governance, MS Project, Primavera P6</span></dd></div>
+          <div><dt><span data-lang="fr">Données</span><span data-lang="en">Data</span></dt><dd>Power BI, DAX, Power Query, SQL, Python (pandas), Excel</dd></div>
+          <div><dt><span data-lang="fr">Outils et langues</span><span data-lang="en">Tools and languages</span></dt><dd><span data-lang="fr">SharePoint, Power Automate. Français (natif), anglais et swahili (courants)</span><span data-lang="en">SharePoint, Power Automate. French (native), English and Swahili (fluent)</span></dd></div>
+        </dl>
+      </div>
     </div>
   </div>
 </section>
 
-<section>
-  <h2 data-lang="fr">Expérience</h2><h2 data-lang="en">Experience</h2>
-  <div class="card" style="margin-bottom:1rem">
-    <h3>Kamoa Copper SA (Ivanhoe Mines) <span class="muted">· 2021 – <span data-lang="fr">présent</span><span data-lang="en">present</span></span></h3>
-    <p data-lang="fr">Officer IT Site Support &amp; Project Expeditor : coordination de projets d'infrastructure (fibre, LAN, Wi-Fi), consolidation et validation des dossiers (quantités, coûts unitaires, devis), suivi des achats et des livrables, planification MS Project / Primavera P6, reporting Power BI et Excel, automatisation avec Power Automate et SharePoint.</p>
-    <p data-lang="en">IT Site Support &amp; Project Expeditor Officer: infrastructure project coordination (fibre, LAN, Wi-Fi), consolidation and validation of project files (quantities, unit costs, quotations), procurement and deliverable follow-up, MS Project / Primavera P6 planning, Power BI and Excel reporting, automation with Power Automate and SharePoint.</p>
+<section id="parcours">
+  <div class="wrap">
+    <h2><span data-lang="fr">Parcours</span><span data-lang="en">Experience</span></h2>
+    <ul class="timeline">
+      <li>
+        <div class="when"><span data-lang="fr">Déc. 2021 à aujourd'hui</span><span data-lang="en">Dec 2021 to present</span></div>
+        <div><h3>Officer, IT Site Support &amp; Project Expeditor</h3><p class="org">Kamoa Copper SA (Ivanhoe Mines), Kolwezi</p>
+          <p data-lang="fr">Projets d'infrastructure (fibre, LAN, Wi-Fi) du cadrage à la mise en service. Planification MS Project et Primavera P6, reporting Power BI et Excel.</p>
+          <p data-lang="en">Infrastructure projects (fibre, LAN, Wi-Fi) from scope definition to commissioning. MS Project and Primavera P6 planning, Power BI and Excel reporting.</p></div>
+      </li>
+      <li>
+        <div class="when"><span data-lang="fr">Nov. 2024 à aujourd'hui</span><span data-lang="en">Nov 2024 to present</span></div>
+        <div><h3>Volunteer Project Manager &amp; Certification Manager</h3><p class="org">PMI DRC Chapter</p>
+          <p data-lang="fr">A mené le programme de certification PMP® KCC17726 : 95 participants, 4 cohortes, budget de 171 000 USD, du cadrage à la clôture.</p>
+          <p data-lang="en">Led the KCC17726 PMP® certification program: 95 participants, 4 cohorts, USD 171,000 budget, from charter to closure.</p></div>
+      </li>
+      <li>
+        <div class="when"><span data-lang="fr">Mars 2023 à déc. 2025</span><span data-lang="en">Mar 2023 to Dec 2025</span></div>
+        <div><h3>IT Consultant &amp; Microsoft Trainer (part-time)</h3><p class="org">Prtech-Group Africa, Lubumbashi / Kolwezi</p>
+          <p data-lang="fr">Formations Microsoft 365, Excel et Power BI, conseil en transformation numérique, applications de gestion de stock et de facturation.</p>
+          <p data-lang="en">Microsoft 365, Excel and Power BI training, digital transformation consulting, stock management and invoicing applications.</p></div>
+      </li>
+      <li>
+        <div class="when"><span data-lang="fr">En cours</span><span data-lang="en">Current</span></div>
+        <div><h3>PMI Authorized Training Partner Instructor (PMP® &amp; CAPM®)</h3><p class="org">SORACERT</p></div>
+      </li>
+      <li>
+        <div class="when">2019 – 2021</div>
+        <div><h3><span data-lang="fr">Débuts</span><span data-lang="en">Early career</span></h3>
+          <p data-lang="fr">Stagiaire IT chez Kamoa Copper (mars à septembre 2021). Spécialiste digital freelance chez LUALABANEWS.NET (2019 à 2021).</p>
+          <p data-lang="en">IT intern at Kamoa Copper (March to September 2021). Freelance digital specialist at LUALABANEWS.NET (2019 to 2021).</p></div>
+      </li>
+    </ul>
+
+    <div class="creds">
+      <div>
+        <h3><span data-lang="fr">Formation</span><span data-lang="en">Education</span></h3>
+        <ul>
+          <li>MBA Data Science Management, TECH Universidad Tecnológica, Mexico <span class="meta">2026 – 2028 (<span data-lang="fr">en cours</span><span data-lang="en">in progress</span>)</span></li>
+          <li><span data-lang="fr">Licence en administration réseaux et systèmes</span><span data-lang="en">Bachelor's in Network &amp; System Administration</span>, ESISALAMA (UDBL) <span class="meta">2019</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Certifications</h3>
+        <ul>
+          <li>Project Management Professional (PMP®), PMI</li>
+          <li>PMI Authorized Training Partner Instructor (PMP® &amp; CAPM®)</li>
+          <li>Microsoft Certified Trainer, AB-731 AI Transformation Leader</li>
+          <li>ITIL® 4 Foundation, Lean Six Sigma White Belt</li>
+          <li>PL-300 Power BI Data Analyst <span class="meta">(<span data-lang="fr">en cours</span><span data-lang="en">in progress</span>)</span></li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <div class="card">
-    <h3>PMI DRC Chapter <span class="muted">· 2024 – <span data-lang="fr">présent</span><span data-lang="en">present</span></span></h3>
-    <p data-lang="fr">Chef de projet bénévole du programme de certification PMP® KCC17726 : 95 participants, 4 cohortes, budget de 171 000 USD, suite complète de suivi PMO et rapport de clôture.</p>
-    <p data-lang="en">Volunteer Project Manager of the KCC17726 PMP® certification program: 95 participants, 4 cohorts, USD 171,000 budget, full PMO monitoring suite and closure report.</p>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2><span data-lang="fr">Parlons de votre projet</span><span data-lang="en">Let's talk about your project</span></h2>
+    <a class="mail" href="mailto:timothekabwe@gmail.com">timothekabwe@gmail.com</a>
+    <ul>
+      <li><a href="https://www.linkedin.com/in/timkabwe/">LinkedIn</a></li>
+      <li><a href="https://github.com/harold92342">GitHub</a></li>
+      <li><a href="assets/files/Timothee_Kabwe_CV.pdf"><span data-lang="fr">CV (PDF)</span><span data-lang="en">CV (PDF)</span></a></li>
+      <li class="muted" style="font-weight:400;color:var(--muted)">Kolwezi, Lualaba, <span data-lang="fr">RDC</span><span data-lang="en">DRC</span></li>
+    </ul>
   </div>
 </section>
+</main>
 
-<section>
-  <h2 data-lang="fr">Compétences</h2><h2 data-lang="en">Skills</h2>
-  <div class="tags"><span>Project Controls</span><span>Earned Value</span><span>PMO Governance</span><span>MS Project</span><span>Primavera P6</span><span>Power BI</span><span>DAX</span><span>Power Query</span><span>Python (pandas)</span><span>SQL (SQLite)</span><span>Excel</span><span>Star schema</span><span>Anomaly detection</span><span>Power Automate</span><span>SharePoint</span></div>
-  <p class="muted" data-lang="fr">Langues : français (natif), anglais (courant), swahili (courant)</p>
-  <p class="muted" data-lang="en">Languages: French (native), English (fluent), Swahili (fluent)</p>
-</section>
-
-<section>
-  <h2>Certifications</h2>
-  <div class="tags"><span>PMP®</span><span>PMI ATP Instructor (PMP® &amp; CAPM®)</span><span>ITIL® 4</span><span>Lean Six Sigma White Belt</span><span>Microsoft Certified Trainer</span><span>AB-731</span><span>PL-300 (<span data-lang="fr">en cours</span><span data-lang="en">in progress</span>)</span></div>
-</section>
-
-<footer class="muted">© Timothée Kabwe Zumbi</footer>
+<footer>
+  <div class="wrap"><span data-lang="fr">© Timothée Kabwe Zumbi. Les données des projets présentés sont fictives.</span><span data-lang="en">© Timothée Kabwe Zumbi. The data in the projects shown is fictional.</span></div>
+</footer>
 
 <script>
+  /* [month end, planned value, earned value, actual cost], USD millions.
+     Source: results/13_monthly_trend.csv of project-controls-sql (snapshot 2026-09-30). */
+  var DATA = [["2023-10-31",1.3,0.7,0.8],["2023-11-30",3.0,2.1,2.6],["2023-12-31",5.8,4.2,5.3],["2024-01-31",9.5,7.4,9.1],["2024-02-29",14.3,10.6,13.3],["2024-03-31",20.1,14.4,18.2],["2024-04-30",26.5,18.4,23.6],["2024-05-31",33.6,23.9,30.4],["2024-06-30",41.6,29.4,37.7],["2024-07-31",50.5,36.5,46.7],["2024-08-31",60.6,45.0,56.8],["2024-09-30",71.8,52.9,66.6],["2024-10-31",83.2,61.5,77.5],["2024-11-30",95.7,71.5,89.6],["2024-12-31",108.7,81.7,102.2],["2025-01-31",121.7,92.7,116.0],["2025-02-28",135.0,103.3,129.4],["2025-03-31",150.0,113.8,141.6],["2025-04-30",163.9,123.3,153.4],["2025-05-31",180.1,133.5,164.8],["2025-06-30",194.3,143.2,177.1],["2025-07-31",209.9,154.0,189.7],["2025-08-31",224.4,164.2,202.8],["2025-09-30",242.7,180.5,220.9],["2025-10-31",261.1,196.8,238.3],["2025-11-30",279.6,214.7,257.9],["2025-12-31",295.5,228.0,273.8],["2026-01-31",312.0,242.1,290.3],["2026-02-28",329.7,256.3,305.6],["2026-03-31",350.1,272.4,321.5],["2026-04-30",366.9,295.0,353.3],["2026-05-31",385.4,317.4,383.2],["2026-06-30",401.5,338.5,413.9],["2026-07-31",418.0,364.2,452.3],["2026-08-31",435.5,382.3,476.0],["2026-09-30",450.3,393.5,490.8]];
+
+  var curve = document.getElementById('curve'), tip = document.getElementById('tip'), legend = document.getElementById('legend');
+  var drawn = false, active = DATA.length - 1, geo = null;
+  var COLORS = { pv: '#6F817B', ev: '#0E6B57', ac: '#C2571A' };
+
+  function lang() { return document.documentElement.lang === 'en' ? 'en' : 'fr'; }
+  function usd(v) { return lang() === 'en' ? '$' + Math.round(v) + 'M' : Math.round(v) + ' M$'; }
+  function month(s) { return new Intl.DateTimeFormat(lang() === 'en' ? 'en-GB' : 'fr-FR', { month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(s + 'T00:00:00Z')); }
+  var T = {
+    fr: { pv: 'Plan', ev: 'Valeur acquise', ac: 'Coût réel', gap: 'Écart de coût', cpi: 'CPI',
+          aria: 'Courbe en S du portefeuille, en millions de dollars : le plan atteint 450, la valeur acquise 394 et le coût réel 491 en septembre 2026.' },
+    en: { pv: 'Planned', ev: 'Earned', ac: 'Actual cost', gap: 'Cost variance', cpi: 'CPI',
+          aria: 'Portfolio S-curve in USD millions: planned value reaches 450, earned value 394 and actual cost 491 in September 2026.' }
+  };
+
+  function draw() {
+    var W = Math.max(300, curve.clientWidth), H = Math.round(Math.min(430, Math.max(300, W * 0.66)));
+    var small = W < 560, m = { l: small ? 34 : 44, r: small ? 62 : 168, t: 14, b: 30 };
+    var pw = W - m.l - m.r, ph = H - m.t - m.b, n = DATA.length, ymax = 500;
+    var X = function (i) { return m.l + pw * i / (n - 1); };
+    var Y = function (v) { return m.t + ph * (1 - v / ymax); };
+    var t = T[lang()];
+    var line = function (k) { return DATA.map(function (d, i) { return (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(d[k]).toFixed(1); }).join(''); };
+    var area = line(3) + DATA.slice().reverse().map(function (d, j) { return 'L' + X(n - 1 - j).toFixed(1) + ' ' + Y(d[2]).toFixed(1); }).join('') + 'Z';
+    var last = DATA[n - 1];
+    var cls = drawn ? '' : ' draw';
+    var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" aria-hidden="true" focusable="false">';
+    for (var v = 0; v <= ymax; v += 100) {
+      s += '<line class="gridline" x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + Y(v) + '" y2="' + Y(v) + '"/>';
+      s += '<text class="axis-text" x="' + (m.l - 8) + '" y="' + (Y(v) + 4) + '" text-anchor="end">' + v + '</text>';
+    }
+    DATA.forEach(function (d, i) {
+      if (d[0].slice(5, 7) === '01') {
+        s += '<text class="axis-text" x="' + X(i) + '" y="' + (H - 8) + '" text-anchor="middle">' + d[0].slice(0, 4) + '</text>';
+      }
+    });
+    s += '<path d="' + area + '" fill="' + COLORS.ac + '" fill-opacity=".14" class="' + (drawn ? '' : 'fade') + '"/>';
+    s += '<path d="' + line(1) + '" fill="none" stroke="' + COLORS.pv + '" stroke-width="2" pathLength="1" class="' + (drawn ? '' : 'draw l1') + '"/>';
+    s += '<path d="' + line(3) + '" fill="none" stroke="' + COLORS.ac + '" stroke-width="3" stroke-linejoin="round" pathLength="1" class="' + cls.trim() + ' l2"/>';
+    s += '<path d="' + line(2) + '" fill="none" stroke="' + COLORS.ev + '" stroke-width="3" stroke-linejoin="round" pathLength="1" class="' + cls.trim() + ' l3"/>';
+    var gx = X(n - 1) - 96, gy = (Y(last[3]) + Y(last[2])) / 2;
+    if (!small) s += '<text class="end-label ' + (drawn ? '' : 'fade') + '" x="' + gx + '" y="' + (gy - 2) + '" text-anchor="middle" fill="' + '#A24510' + '" stroke="#EDF0EE" stroke-width="4" paint-order="stroke">' + t.gap + '</text>';
+    if (!small) s += '<text class="end-label ' + (drawn ? '' : 'fade') + '" x="' + gx + '" y="' + (gy + 14) + '" text-anchor="middle" fill="#A24510" stroke="#EDF0EE" stroke-width="4" paint-order="stroke">−' + usd(last[3] - last[2]) + '</text>';
+    var ends = [['ac', last[3], '#A24510'], ['pv', last[1], '#4E625C'], ['ev', last[2], '#0B5545']];
+    ends.forEach(function (e) {
+      s += '<text class="end-label ' + (drawn ? '' : 'fade') + '" x="' + (W - m.r + 8) + '" y="' + (Y(e[1]) + 4) + '" fill="' + e[2] + '">' + (small ? '' : t[e[0]] + ' ') + usd(e[1]) + '</text>';
+    });
+    s += '<g id="hover" style="display:none"><line id="hv" y1="' + m.t + '" y2="' + (m.t + ph) + '" stroke="#12302B" stroke-width="1"/>' +
+         ['pv', 'ev', 'ac'].map(function (k) { return '<circle id="dot-' + k + '" r="4.5" fill="#EDF0EE" stroke="' + COLORS[k] + '" stroke-width="2.5"/>'; }).join('') + '</g>';
+    s += '</svg>';
+    curve.innerHTML = s;
+    curve.setAttribute('aria-label', t.aria);
+    legend.hidden = !small;
+    legend.innerHTML = ['pv', 'ev', 'ac'].map(function (k) { return '<li><i style="background:' + COLORS[k] + '"></i>' + t[k] + '</li>'; }).join('');
+    geo = { m: m, pw: pw, ph: ph, X: X, Y: Y, n: n, W: W };
+    if (!drawn) { drawn = true; }
+  }
+
+  function show(i) {
+    if (!geo) return;
+    i = Math.max(0, Math.min(geo.n - 1, i)); active = i;
+    var d = DATA[i], x = geo.X(i), t = T[lang()];
+    document.getElementById('hover').style.display = '';
+    var hv = document.getElementById('hv'); hv.setAttribute('x1', x); hv.setAttribute('x2', x);
+    [['pv', 1], ['ev', 2], ['ac', 3]].forEach(function (p) {
+      var c = document.getElementById('dot-' + p[0]); c.setAttribute('cx', x); c.setAttribute('cy', geo.Y(d[p[1]]));
+    });
+    var cpi = d[3] ? (d[2] / d[3]).toFixed(2) : '';
+    tip.innerHTML = '<b>' + month(d[0]) + '</b><br>' +
+      '<i style="background:' + COLORS.pv + '"></i>' + t.pv + ' ' + usd(d[1]) + '<br>' +
+      '<i style="background:' + COLORS.ev + '"></i>' + t.ev + ' ' + usd(d[2]) + '<br>' +
+      '<i style="background:' + COLORS.ac + '"></i>' + t.ac + ' ' + usd(d[3]) + '<br>' + t.cpi + ' ' + (lang() === 'fr' ? cpi.replace('.', ',') : cpi);
+    var left = x + 14, w = tip.offsetWidth;
+    if (left + w > geo.W) left = x - w - 14;
+    var top = x < geo.m.l + geo.pw * 0.5 ? 14 : geo.m.t + geo.ph - tip.offsetHeight - 8; /* stay in the empty corner of the chart */
+    tip.style.left = Math.max(0, left) + 'px'; tip.style.top = top + 'px'; tip.style.opacity = 1;
+    tip.setAttribute('aria-hidden', 'false');
+  }
+  function hide() { var h = document.getElementById('hover'); if (h) h.style.display = 'none'; tip.style.opacity = 0; tip.setAttribute('aria-hidden', 'true'); }
+
+  curve.addEventListener('pointermove', function (e) {
+    if (!geo) return; var r = curve.getBoundingClientRect();
+    show(Math.round((e.clientX - r.left - geo.m.l) / geo.pw * (geo.n - 1)));
+  });
+  curve.addEventListener('pointerleave', hide);
+  curve.addEventListener('blur', hide);
+  curve.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') { show(active - 1); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { show(active + 1); e.preventDefault(); }
+    if (e.key === 'Home') { show(0); e.preventDefault(); }
+    if (e.key === 'End') { show(DATA.length - 1); e.preventDefault(); }
+  });
+  setTimeout(function () { curve.classList.add('settled'); }, 4500);
+  var timer; window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(function () { draw(); hide(); }, 120); });
+
   function setLang(l) {
     document.documentElement.lang = l;
-    document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
-    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-fr').setAttribute('aria-pressed', String(l === 'fr'));
+    document.getElementById('btn-en').setAttribute('aria-pressed', String(l === 'en'));
     try { localStorage.setItem('lang', l); } catch (e) {}
+    draw(); hide();
   }
   var saved = null;
   try { saved = localStorage.getItem('lang'); } catch (e) {}
