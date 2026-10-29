@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timothée Kabwe Zumbi – Project & Data</title>
+<meta name="description" content="Portfolio de Timothée Kabwe Zumbi, Project & Data Professional, PMP, Power BI, DAX, Python, industrie minière. / Portfolio of Timothée Kabwe Zumbi, Project & Data Professional, PMP, Power BI, DAX, Python, mining industry.">
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,Segoe UI,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  header, section, footer { max-width:900px; margin:0 auto; padding:2rem 1rem; }
+  nav { display:flex; justify-content:flex-end; padding:1rem; }
+  .lang button { background:var(--card); color:var(--text); border:1px solid var(--muted); padding:.4rem .9rem; cursor:pointer; border-radius:6px; }
+  .lang button.active { background:var(--accent); color:#0f172a; border-color:var(--accent); }
+  h1 { font-size:2.2rem; margin:.2rem 0; }
+  h2 { color:var(--accent); border-bottom:1px solid var(--card); padding-bottom:.4rem; }
+  .muted { color:var(--muted); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+  .card { background:var(--card); padding:1.2rem; border-radius:10px; }
+  .card h3 { margin-top:0; }
+  .tags span { display:inline-block; background:var(--card); border:1px solid var(--accent); color:var(--accent); padding:.2rem .7rem; border-radius:999px; margin:.2rem; font-size:.9rem; }
+  a { color:var(--accent); }
+  .photo { width:140px; height:140px; border-radius:50%; object-fit:cover; border:3px solid var(--accent); }
+  .btn { display:inline-block; background:var(--accent); color:#0f172a; padding:.5rem 1.1rem; border-radius:8px; text-decoration:none; font-weight:600; margin-top:.5rem; }
+  [data-lang] { display:none; }
+  html[lang="fr"] [data-lang="fr"], html[lang="en"] [data-lang="en"] { display:revert; }
+</style>
+</head>
+<body>
+<nav class="lang">
+  <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+  <button id="btn-en" onclick="setLang('en')" style="margin-left:.4rem">EN</button>
+</nav>
+
+<header>
+  <img class="photo" src="assets/images/profile.jpg" alt="Timothée Kabwe Zumbi">
+  <p class="muted" data-lang="fr">Bonjour, je suis</p>
+  <p class="muted" data-lang="en">Hello, I'm</p>
+  <h1>Timothée Kabwe Zumbi</h1>
+  <h3 data-lang="fr">Project &amp; Data Professional | PMP® | Power BI · DAX · Python · SQL</h3>
+  <h3 data-lang="en">Project &amp; Data Professional | PMP® | Power BI · DAX · Python · SQL</h3>
+  <p data-lang="fr">Je pilote des projets miniers et je transforme leurs données en décisions claires : coûts, délais, KPI fiables et tableaux de bord.</p>
+  <p data-lang="en">I deliver mining projects and turn their data into clear decisions: cost, schedule, reliable KPIs and dashboards.</p>
+  <p class="muted">Kolwezi, Lualaba, DRC</p>
+  <p>
+    <a href="mailto:timothekabwe@gmail.com">timothekabwe@gmail.com</a> ·
+    <a href="https://github.com/harold92342">GitHub</a> ·
+    <a href="https://www.linkedin.com/in/timkabwe/">LinkedIn</a>
+  </p>
+  <a class="btn" href="assets/files/Timothee_Kabwe_CV.pdf" data-lang="fr">Télécharger mon CV (PDF)</a>
+  <a class="btn" href="assets/files/Timothee_Kabwe_CV.pdf" data-lang="en">Download my CV (PDF)</a>
+</header>
+
+<section>
+  <h2 data-lang="fr">À propos</h2><h2 data-lang="en">About</h2>
+  <p data-lang="fr">Professionnel certifié PMP® avec plus de 5 ans dans les mines du Copperbelt (Kamoa Copper SA, groupe Ivanhoe Mines). Je coordonne des projets d'infrastructure, suis les coûts, les délais et les achats, puis je modélise les données (modèle en étoile, DAX, Power Query) pour les présenter à la direction dans des tableaux de bord Power BI et Excel. Instructeur PMI agréé (PMP® et CAPM®). MBA Data Science Management en cours, PL-300 en préparation.</p>
+  <p data-lang="en">PMP®-certified professional with 5+ years in the Copperbelt mining industry (Kamoa Copper SA, Ivanhoe Mines group). I coordinate infrastructure projects, track cost, schedule and procurement, then model the data (star schema, DAX, Power Query) to present it to management in Power BI and Excel dashboards. PMI Authorized Training Partner Instructor (PMP® &amp; CAPM®). MBA in Data Science Management in progress, PL-300 in preparation.</p>
+</section>
+
+<section>
+  <h2 data-lang="fr">Projets</h2><h2 data-lang="en">Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Mining PMO Portfolio Dashboard</h3>
+      <p class="muted">Power BI · DAX · Power Query · Python</p>
+      <p data-lang="fr">Tableau de bord en 6 pages pour un portefeuille de 32 projets miniers. 11 tables sources consolidées en modèle en étoile (5 dimensions, 7 faits), mesures DAX (PV, EV, AC, EAC, CPI, SPI), nettoyage Power Query du KPI sécurité, KPI rapprochés de calculs Python indépendants.</p>
+      <p data-lang="en">6-page dashboard for a 32-project mining portfolio. 11 source tables consolidated into a star schema (5 dimensions, 7 facts), DAX measures (PV, EV, AC, EAC, CPI, SPI), Power Query cleaning of the safety KPI, KPIs reconciled against independent Python calculations.</p>
+      <a href="https://github.com/harold92342/mining-pmo-dashboard">GitHub →</a>
+    </div>
+    <div class="card">
+      <h3>Copperbelt GeoAI</h3>
+      <p class="muted">Python · Isolation Forest · Streamlit</p>
+      <p data-lang="fr">Détection d'anomalies sur des données minières avec Isolation Forest, publiée sous forme de tableau de bord interactif Streamlit.</p>
+      <p data-lang="en">Anomaly detection on mining data with Isolation Forest, published as an interactive Streamlit dashboard.</p>
+      <a href="https://github.com/harold92342/copperbelt-geoai">GitHub →</a>
+    </div>
+    <div class="card">
+      <h3>Excel Sales Analytics – Atliq</h3>
+      <p class="muted">Excel</p>
+      <p data-lang="fr">Analyse des ventes et tableau de bord Excel.</p>
+      <p data-lang="en">Sales analysis and Excel dashboard.</p>
+      <a href="https://github.com/harold92342/Excel-Sales-Analytics-for-Atliq-company">GitHub →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 data-lang="fr">Expérience</h2><h2 data-lang="en">Experience</h2>
+  <div class="card" style="margin-bottom:1rem">
+    <h3>Kamoa Copper SA (Ivanhoe Mines) <span class="muted">· 2021 – <span data-lang="fr">présent</span><span data-lang="en">present</span></span></h3>
+    <p data-lang="fr">Officer IT Site Support &amp; Project Expeditor : coordination de projets d'infrastructure (fibre, LAN, Wi-Fi), consolidation et validation des dossiers (quantités, coûts unitaires, devis), suivi des achats et des livrables, planification MS Project / Primavera P6, reporting Power BI et Excel, automatisation avec Power Automate et SharePoint.</p>
+    <p data-lang="en">IT Site Support &amp; Project Expeditor Officer: infrastructure project coordination (fibre, LAN, Wi-Fi), consolidation and validation of project files (quantities, unit costs, quotations), procurement and deliverable follow-up, MS Project / Primavera P6 planning, Power BI and Excel reporting, automation with Power Automate and SharePoint.</p>
+  </div>
+  <div class="card">
+    <h3>PMI DRC Chapter <span class="muted">· 2024 – <span data-lang="fr">présent</span><span data-lang="en">present</span></span></h3>
+    <p data-lang="fr">Chef de projet bénévole du programme de certification PMP® KCC17726 : 95 participants, 4 cohortes, budget de 171 000 USD, suite complète de suivi PMO et rapport de clôture.</p>
+    <p data-lang="en">Volunteer Project Manager of the KCC17726 PMP® certification program: 95 participants, 4 cohorts, USD 171,000 budget, full PMO monitoring suite and closure report.</p>
+  </div>
+</section>
+
+<section>
+  <h2 data-lang="fr">Compétences</h2><h2 data-lang="en">Skills</h2>
+  <div class="tags"><span>Project Controls</span><span>Earned Value</span><span>PMO Governance</span><span>MS Project</span><span>Primavera P6</span><span>Power BI</span><span>DAX</span><span>Power Query</span><span>Python (pandas)</span><span>SQL</span><span>Excel</span><span>Star schema</span><span>Anomaly detection</span><span>Power Automate</span><span>SharePoint</span></div>
+  <p class="muted" data-lang="fr">Langues : français (natif), anglais (courant), swahili (courant)</p>
+  <p class="muted" data-lang="en">Languages: French (native), English (fluent), Swahili (fluent)</p>
+</section>
+
+<section>
+  <h2>Certifications</h2>
+  <div class="tags"><span>PMP®</span><span>PMI ATP Instructor (PMP® &amp; CAPM®)</span><span>ITIL® 4</span><span>Lean Six Sigma White Belt</span><span>Microsoft Certified Trainer</span><span>AB-731</span><span>PL-300 (<span data-lang="fr">en cours</span><span data-lang="en">in progress</span>)</span></div>
+</section>
+
+<footer class="muted">© Timothée Kabwe Zumbi</footer>
+
+<script>
+  function setLang(l) {
+    document.documentElement.lang = l;
+    document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  setLang(saved || ((navigator.language || 'fr').slice(0, 2) === 'en' ? 'en' : 'fr'));
+</script>
+</body>
+</html>
